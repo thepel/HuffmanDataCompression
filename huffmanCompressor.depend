@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1462843606 source:h:\alpro3\huffmancompressor\main.cpp
+	<iostream>
+	<string>
+	"WordFrequency.h"
+	"H:\alpro3\libBruno\LinkedList\LinkedList.hpp"
+
+1462843686 h:\alpro3\libbruno\linkedlist\linkedlist.hpp
+	<iostream>
+	"Node.hpp"
+
+1462839972 h:\alpro3\libbruno\linkedlist\node.hpp
+	<iostream>
+
+1462843305 source:h:\alpro3\huffmancompressor\wordfrequency.cpp
+	"WordFrequency.h"
+
+1462843413 h:\alpro3\huffmancompressor\wordfrequency.h
+	<string>
+
