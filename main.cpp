@@ -1,34 +1,67 @@
 #include <iostream>
 #include <string>
-#include "WordFrequency.h"
-#include "H:\alpro3\libBruno\LinkedList\LinkedList.hpp"
+#include "LetterFrequency.hpp"
+#include "huffmanTree.hpp"
+#include "C:\Users\bruno.carneiro\Documents\faculdade\libBruno-master\LinkedList\LinkedList.hpp"
 
 using namespace std;
 
+string readWord();
+LinkedList<LetterFrequency>* newLetterList( string wrd );
+
 int main(){
     string wrd;
-    LinkedList<WordFrequency> *char_list;
-    WordFrequency *wf;
+    LinkedList<HuffmanTree> *lst;
+    LinkedList<LetterFrequency> *lFreq;
 
-    cout << "Digite a palavra a ser comprimida: ";
+	//: Read user input ://
+    wrd = readWord();
+
+	//: Creates a list of letter/frequency ://
+    lFreq = newLetterList( wrd );
+
+    cout << "Lista formada: " << endl;
+
+    lFreq->printContent();
+
+    delete lFreq;
+
+    return 0;
+}
+
+string readWord(){
+	string wrd;
+
+	cout << "Digite a palavra a ser comprimida: ";
     cin >> wrd;
     cout << endl;
 
-    char_list = new LinkedList<WordFrequency>;
+    return wrd;
+}
 
-    for( string::iterator it = wrd.begin(); it != wrd.end(); it++ ){
-        wf = new WordFrequency( *it );
+LinkedList<LetterFrequency>* newLetterList( string wrd ){
+	LinkedList<LetterFrequency> *lFreq;
+	string::iterator it;
+	LetterFrequency *aux;
 
-        if( char_list->exists( wf ) == true )
-            cout << "Ja tem a letra " << *it << endl;
+
+	lFreq = new LinkedList<LetterFrequency>;
+
+    for( it = wrd.begin(); it != wrd.end(); it++ ){
+        aux = new LetterFrequency( *it );
+
+		aux = lFreq->findElement( aux );
+
+        if(  aux == NULL ){
+        	cout << "Nao tem a letra " << *it << endl;
+            lFreq->add( new LetterFrequency( *it ) );
+        }
         else{
-            cout << "Nao tem a letra " << *it << endl;
-            char_list->add( wf );
+            cout << "Ja tem a letra " << *it << endl;
+            aux->incFrequency();
         }
 
     }
 
-    delete char_list;
-
-    return 0;
+    return lFreq;
 }

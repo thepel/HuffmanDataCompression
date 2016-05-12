@@ -18,3 +18,39 @@
 1462843413 h:\alpro3\huffmancompressor\wordfrequency.h
 	<string>
 
+1463003470 source:c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\main.cpp
+	<iostream>
+	<string>
+	"LetterFrequency.hpp"
+	"huffmanTree.hpp"
+	"C:\Users\bruno.carneiro\Documents\faculdade\libBruno-master\LinkedList\LinkedList.hpp"
+
+1462999510 c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\wordfrequency.h
+	<iostream>
+
+1462999319 c:\users\bruno.carneiro\documents\faculdade\libbruno-master\linkedlist\linkedlist.hpp
+	<iostream>
+	"Node.hpp"
+
+1463000454 c:\users\bruno.carneiro\documents\faculdade\libbruno-master\linkedlist\node.hpp
+	<iostream>
+
+1462999598 source:c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\wordfrequency.cpp
+	"WordFrequency.h"
+
+1463002416 source:c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\letterfrequency.cpp
+	"LetterFrequency.hpp"
+
+1463002422 c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\letterfrequency.hpp
+	<iostream>
+
+1463003527 c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\huffmantree.hpp
+	"LetterFrequency.hpp"
+	"C:\Users\bruno.carneiro\Documents\faculdade\libBruno-master\Tree\TNode.hpp"
+
+1463001285 c:\users\bruno.carneiro\documents\faculdade\libbruno-master\tree\tnode.hpp
+	<iostream>
+
+1463003682 source:c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\huffmantree.cpp
+	"huffmanTree.hpp"
+

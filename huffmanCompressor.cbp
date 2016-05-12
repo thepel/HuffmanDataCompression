@@ -32,6 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../libBruno-master/LinkedList/LinkedList.hpp" />
+		<Unit filename="../libBruno-master/LinkedList/Node.hpp" />
+		<Unit filename="../libBruno-master/Tree/TNode.hpp" />
+		<Unit filename="../libBruno-master/Tree/Tree.hpp" />
+		<Unit filename="LetterFrequency.cpp" />
+		<Unit filename="LetterFrequency.hpp" />
+		<Unit filename="huffmanTree.cpp" />
+		<Unit filename="huffmanTree.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
