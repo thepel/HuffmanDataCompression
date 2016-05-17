@@ -54,3 +54,26 @@
 1463003682 source:c:\users\bruno.carneiro\documents\faculdade\huffmancompression-master\huffmantree.cpp
 	"huffmanTree.hpp"
 
+1463447704 source:h:\alpro3\huffmandatacompression\trunk\huffmantree.cpp
+	"huffmanTree.hpp"
+
+1463449151 h:\alpro3\huffmandatacompression\trunk\huffmantree.hpp
+	"LetterFrequency.hpp"
+	"TNode.hpp"
+
+1463445737 h:\alpro3\huffmandatacompression\trunk\letterfrequency.hpp
+	<iostream>
+
+1463432074 h:\alpro3\huffmandatacompression\trunk\tnode.hpp
+	<iostream>
+
+1463446256 source:h:\alpro3\huffmandatacompression\trunk\letterfrequency.cpp
+	"LetterFrequency.hpp"
+
+1463448663 source:h:\alpro3\huffmandatacompression\trunk\main.cpp
+	<iostream>
+	<string>
+	<list>
+	"LetterFrequency.hpp"
+	"huffmanTree.hpp"
+

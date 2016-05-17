@@ -15,7 +15,10 @@ class LetterFrequency{
         char getWord();
         int getFrequency();
         void incFrequency();
+        void setFrequency( int freq );
         bool compare( LetterFrequency *wf );
+        bool compareContent( char c );
+        bool compareFrequency( LetterFrequency *wf );
         void print();
 
 };

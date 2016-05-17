@@ -21,9 +21,27 @@ void LetterFrequency::incFrequency(){
     this->freq++;
 }
 
+void LetterFrequency::setFrequency( int freq ){ this->freq = freq; }
+
 bool LetterFrequency::compare( LetterFrequency *wf ){
 
     if( this->word == wf->getWord() )
+        return true;
+
+    return false;
+}
+
+bool LetterFrequency::compareContent( char c ){
+
+    if( this->word == c )
+        return true;
+
+    return false;
+}
+
+bool LetterFrequency::compareFrequency( LetterFrequency *wf ){
+
+    if( this->freq < wf->getFrequency() )
         return true;
 
     return false;
