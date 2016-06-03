@@ -46,6 +46,8 @@ int main(){
 
     hTree->createTreeFromList( freq_list );
 
+    hTree->print();
+
     delete freq_list;
 
     return 0;

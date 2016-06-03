@@ -10,6 +10,7 @@ private:
     Node *root;
 
     Node* getRoot();
+    void printRec( Node *n, std::list<char> *tree_structure, int level );
 
 public:
     HuffmanTree();

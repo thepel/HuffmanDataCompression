@@ -88,6 +88,27 @@ int HuffmanTree::getTotalFrequency(){
 }
 
 void HuffmanTree::print(){
+	printRec( this->root, 0 );
+}
+
+void HuffmanTree::printRec( Node *n, std::list<char> *tree_structure, int level ){
+
+	if( n == NULL )
+		return;
+
+	printRec( n->getLeft(), indent + 4 );
+
+	if( indent ){
+
+		std::cout << ' ';
+
+		std::cout << n->getLetter();
+		std::cout << ' ';
+		std::cout << n->getFrequency();
+
+	}
+
+	printRec( n->getRight(), indent + 4 );
 
 }
 
