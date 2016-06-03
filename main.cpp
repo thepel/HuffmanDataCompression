@@ -42,7 +42,7 @@ int main(){
         cout << endl;
     }
 
-    //hTree = createHuffmanTree( freq_list );
+    hTree->createTreeFromList( freq_list );
 
     delete freq_list;
 

@@ -2,6 +2,7 @@
 #define _HUFFMANTREE_HPP_
 
 #include <iostream>
+#include <list>
 #include "Node.hpp"
 
 class HuffmanTree{
@@ -14,6 +15,7 @@ public:
     HuffmanTree();
     ~HuffmanTree();
 
+	void createTreeFromList( std::list<Node*> *node_list );
     bool empty();
     int getTotalFrequency();
 	void print();

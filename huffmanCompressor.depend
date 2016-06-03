@@ -77,23 +77,24 @@
 	"LetterFrequency.hpp"
 	"huffmanTree.hpp"
 
-1464974869 source:c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\huffmantree.cpp
+1464975924 source:c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\huffmantree.cpp
 	"huffmanTree.hpp"
 
-1464975137 c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\huffmantree.hpp
+1464975659 c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\huffmantree.hpp
 	<iostream>
+	<list>
 	"Node.hpp"
 
 1464975218 c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\node.hpp
 	<iostream>
 
-1464975199 source:c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\main.cpp
+1464975859 source:c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\main.cpp
 	<iostream>
 	<string>
 	<list>
 	"Node.hpp"
 	"huffmanTree.hpp"
 
-1464974457 source:c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\node.cpp
+1464975766 source:c:\users\bruno.carneiro\documents\faculdade\huffmandatacompression\node.cpp
 	"Node.hpp"
 

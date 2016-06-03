@@ -2,7 +2,9 @@
 
 Node::Node( char letter ){
     this->letter = letter;
-    this->freq = 1;
+    this->freq   = 1;
+    this->left   = NULL;
+    this->right  = NULL;
 }
 
 Node::~Node(){
@@ -42,6 +44,8 @@ bool Node::compareFrequency( Node *n ){
 void Node::print(){
 	std::cout << "Letter: " << this->letter;
 	std::cout << "    Freq: " << this->freq;
+	std::cout << "    Left: " << this->left;
+	std::cout << "    Right " << this->right;
 	//std::cout << std::endl;
 }
 
