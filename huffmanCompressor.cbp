@@ -34,6 +34,8 @@
 			<Add option="-g" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Node.cpp" />
+		<Unit filename="Node.hpp" />
 		<Unit filename="huffmanTree.cpp" />
 		<Unit filename="huffmanTree.hpp" />
 		<Unit filename="main.cpp" />
