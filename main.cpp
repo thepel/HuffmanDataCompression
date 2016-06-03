@@ -29,7 +29,6 @@ int main(){
     for( it = freq_list->begin(); it != freq_list->end(); it++ ){
         freq = *it;
         freq->print();
-        cout << endl;
     }
 
     freq_list->sort( compareListElements );
@@ -39,8 +38,11 @@ int main(){
     for( it = freq_list->begin(); it != freq_list->end(); it++ ){
         freq = *it;
         freq->print();
-        cout << endl;
     }
+
+    cout << endl;
+
+	hTree = new HuffmanTree();
 
     hTree->createTreeFromList( freq_list );
 

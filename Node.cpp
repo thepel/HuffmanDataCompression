@@ -46,7 +46,7 @@ void Node::print(){
 	std::cout << "    Freq: " << this->freq;
 	std::cout << "    Left: " << this->left;
 	std::cout << "    Right " << this->right;
-	//std::cout << std::endl;
+	std::cout << std::endl;
 }
 
 void Node::setLeft( Node *n ) { this->left = n; }
