@@ -1,22 +1,21 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "LetterFrequency.hpp"
+#include "Node.hpp"
 #include "huffmanTree.hpp"
 
 using namespace std;
 
 //: Area de declaração de funções ://
 string readWord();
-list<LetterFrequency*>* createFreqList( string wrd );
-bool compareListElements( LetterFrequency *f1, LetterFrequency *f2 );
-HuffmanTree* createHuffmanTree( list<LetterFrequency*> *freq_list );
+list<Node*>* createFreqList( string wrd );
+bool compareListElements( Node *n1, Node *n2 );
 
 int main(){
     string wrd;
-    LetterFrequency *freq;
-    list<LetterFrequency*>::iterator it;
-    list<LetterFrequency*> *freq_list;
+    Node *freq;
+    list<Node*>::iterator it;
+    list<Node*> *freq_list;
     HuffmanTree *hTree;
 
 	//: Read user input ://
@@ -43,7 +42,7 @@ int main(){
         cout << endl;
     }
 
-    hTree = createHuffmanTree( freq_list );
+    //hTree = createHuffmanTree( freq_list );
 
     delete freq_list;
 
@@ -60,15 +59,15 @@ string readWord(){
     return wrd;
 }
 
-list<LetterFrequency*>* createFreqList( string wrd ){
+list<Node*>* createFreqList( string wrd ){
     string::iterator wrd_it;
-    list<LetterFrequency*>::iterator l_it;
-    list<LetterFrequency*> *l   = NULL;
-    LetterFrequency *aux        = NULL;
+    list<Node*>::iterator l_it;
+    list<Node*> *l   = NULL;
+    Node *aux        = NULL;
     bool lFound                 = false;
 
 
-    l = new list<LetterFrequency*>;
+    l = new list<Node*>;
 
     for( wrd_it = wrd.begin(); wrd_it != wrd.end(); wrd_it++ ){
 
@@ -78,7 +77,7 @@ list<LetterFrequency*>* createFreqList( string wrd ){
 
             aux = *l_it;
 
-            if( aux->compareContent( *wrd_it ) ){
+            if( aux->getLetter() == *wrd_it ){
                 lFound = true;
                 break;
             }
@@ -91,7 +90,7 @@ list<LetterFrequency*>* createFreqList( string wrd ){
         }
         else{
             cout << "nao existe " << *wrd_it << endl;
-            aux = new LetterFrequency( *wrd_it );
+            aux = new Node( *wrd_it );
             l->push_back( aux );
         }
 
@@ -100,49 +99,11 @@ list<LetterFrequency*>* createFreqList( string wrd ){
     return l;
 }
 
-bool compareListElements( LetterFrequency *f1, LetterFrequency *f2 ){
+bool compareListElements( Node *n1, Node *n2 ){
 
-    if( f1->compareFrequency( f2 ) )
+    if( n1->compareFrequency( n2 ) )
         return true;
 
     return false;
 
 }
-
-HuffmanTree* createHuffmanTree( list<LetterFrequency*> *freq_list ){
-    list<LetterFrequency*>::iterator freq_it;
-    list<HuffmanTree*>::iterator     tree_it;
-
-    list<HuffmanTree*> *tree_list   = NULL;
-    HuffmanTree *hTree              = NULL;
-    LetterFrequency *freq           = NULL;
-
-
-    tree_list = new list<HuffmanTree*>;
-
-    while( !freq_list->empty() ){
-
-        freq = freq_list->front();
-        freq_list->pop_front();
-
-        hTree = new HuffmanTree();
-        hTree->add( freq );
-
-        tree_list->push_back( hTree );
-
-    }
-
-    hTree = new HuffmanTree();
-
-    while( !tree_list->empty() ){
-
-        hTree->addTree( tree_list->front() );
-        tree_list->pop_front();
-
-    }
-
-    delete tree_list;
-
-    return hTree;
-}
-

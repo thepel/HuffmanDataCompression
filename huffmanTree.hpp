@@ -1,22 +1,19 @@
 #ifndef _HUFFMANTREE_HPP_
 #define _HUFFMANTREE_HPP_
 
-#include "LetterFrequency.hpp"
-#include "TNode.hpp"
+#include <iostream>
+#include "Node.hpp"
 
 class HuffmanTree{
 private:
-    TNode<LetterFrequency> *root;
+    Node *root;
 
-    TNode<LetterFrequency>* getRoot();
-    void addNode( TNode<LetterFrequency> *n );
+    Node* getRoot();
 
 public:
     HuffmanTree();
     ~HuffmanTree();
 
-    void add( LetterFrequency *lf );
-    void addTree( HuffmanTree *tree );
     bool empty();
     int getTotalFrequency();
 	void print();
