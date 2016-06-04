@@ -30,6 +30,11 @@ void HuffmanTree::createTreeFromList( std::list<Node*> *node_list ){
 
 				if( n1->getFrequency() >= this->root->getFrequency() )
 					add_root = true;
+                else{
+                    if( node_list->empty() )
+                        add_root = true;
+                }
+
 
 			}
 
@@ -51,12 +56,11 @@ void HuffmanTree::createTreeFromList( std::list<Node*> *node_list ){
 			n2->print();
 			std::cout << std::endl;
 
-			ju = new Node( JUNCTION_NODE );
+			ju = newJunctionNode( n1, n2 );
 
-			ju->setFrequency( n1->getFrequency() + n2->getFrequency() );
-
-			ju->setLeft( n1 );
-			ju->setRight( n2 );
+			if( this->root != NULL && this->root != n2 ){
+                ju = newJunctionNode( ju, this->root );
+			}
 
 			this->root = ju;
 
@@ -89,10 +93,15 @@ int HuffmanTree::getTotalFrequency(){
 
 void HuffmanTree::print(){
 	std::list<char> *tree_structure;
+	std::list<char>::iterator it;
 
 	tree_structure = new std::list<char>;
 
 	printRec( this->root, tree_structure, 0 );
+
+	for( it = tree_structure->begin(); it != tree_structure->end(); it++ ){
+	    std::cout << *it;
+	}
 }
 
 void HuffmanTree::printRec( Node *n, std::list<char> *tree_structure, int level ){
@@ -101,19 +110,34 @@ void HuffmanTree::printRec( Node *n, std::list<char> *tree_structure, int level 
 	if( n == NULL )
 		return;
 
+	tree_structure->push_back( '{' );
+    tree_structure->push_back( n->getLetter() );
+	//tree_structure->push_back( ':' );
+	//tree_structure->push_back( n->getFrequency() );
+
 	printRec( n->getLeft(), tree_structure, level + 1 );
 
-	for( loop = 0; loop < level; loop++ ){
-		tree_structure->push_back('\t');
-	}
+	//for( loop = 0; loop < level; loop++ ){
+	//	tree_structure->push_back('\t');
+	//}
 
-	tree_structure->push_back( n->getLetter() );
-	tree_structure->push_back( ' ' );
-	tree_structure->push_back( n->getFrequency() );
-
-	tree_structure->push_back( '\n' );
+	//tree_structure->push_back( '\n' );
 
 	printRec( n->getRight(), tree_structure, level + 1 );
 
+	tree_structure->push_back( '}' );
+
 }
 
+Node* HuffmanTree::newJunctionNode( Node *n1, Node *n2 ){
+    Node *ju;
+
+    ju = new Node( JUNCTION_NODE );
+
+    ju->setFrequency( n1->getFrequency() + n2->getFrequency() );
+
+    ju->setLeft( n1 );
+    ju->setRight( n2 );
+
+    return ju;
+}

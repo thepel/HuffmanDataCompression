@@ -11,6 +11,7 @@ private:
 
     Node* getRoot();
     void printRec( Node *n, std::list<char> *tree_structure, int level );
+    Node* newJunctionNode( Node *n1, Node *n2 );
 
 public:
     HuffmanTree();
