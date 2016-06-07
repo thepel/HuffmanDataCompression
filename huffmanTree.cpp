@@ -105,25 +105,21 @@ void HuffmanTree::print(){
 }
 
 void HuffmanTree::printRec( Node *n, std::list<char> *tree_structure, int level ){
-	int loop;
 
 	if( n == NULL )
 		return;
 
 	tree_structure->push_back( '{' );
     tree_structure->push_back( n->getLetter() );
-	//tree_structure->push_back( ':' );
-	//tree_structure->push_back( n->getFrequency() );
+
 
 	printRec( n->getLeft(), tree_structure, level + 1 );
 
-	//for( loop = 0; loop < level; loop++ ){
-	//	tree_structure->push_back('\t');
-	//}
+	if( n->getRight() != NULL ){
+		tree_structure->push_back( ',' );
 
-	//tree_structure->push_back( '\n' );
-
-	printRec( n->getRight(), tree_structure, level + 1 );
+		printRec( n->getRight(), tree_structure, level + 1 );
+	}
 
 	tree_structure->push_back( '}' );
 
